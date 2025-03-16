@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Game</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.159.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.159.0/examples/jsm/"
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="game-container">
+        <div id="ui-overlay">
+            <div class="score-container">
+                <span class="score-label">Score:</span>
+                <span id="score">0</span>
+            </div>
+            <div class="controls">
+                <button id="startBtn" class="game-btn">
+                    <i class="fas fa-play"></i> Start
+                </button>
+                <button id="pauseBtn" class="game-btn" disabled>
+                    <i class="fas fa-pause"></i> Pause
+                </button>
+                <button id="restartBtn" class="game-btn" disabled>
+                    <i class="fas fa-redo"></i> Restart
+                </button>
+            </div>
+            <div id="instructions" class="instructions">
+                <h2>How to Play</h2>
+                <p>Use WASD or Arrow keys to move</p>
+                <p>Avoid obstacles and survive as long as possible!</p>
+            </div>
+        </div>
+        <div id="game-over" class="hidden">
+            <h1>Game Over!</h1>
+            <p>Final Score: <span id="final-score">0</span></p>
+            <button id="playAgainBtn" class="game-btn">
+                <i class="fas fa-play"></i> Play Again
+            </button>
+        </div>
+    </div>
+    <script type="module" src="app.js"></script>
+</body>
+</html>
