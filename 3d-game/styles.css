@@ -1,0 +1,176 @@
+/* Modern CSS Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    overflow: hidden;
+    background: #1a1a1a;
+    color: #ffffff;
+}
+
+#game-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* UI Overlay Styles */
+#ui-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    pointer-events: none; /* Allow clicks to pass through to the game */
+}
+
+/* Score Container */
+.score-container {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    font-size: 1.2em;
+    pointer-events: auto;
+}
+
+.score-label {
+    color: #a8a8a8;
+    margin-right: 10px;
+}
+
+#score {
+    color: #4CAF50;
+    font-weight: 600;
+}
+
+/* Game Controls */
+.controls {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    pointer-events: auto;
+}
+
+.game-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.game-btn:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.game-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.game-btn i {
+    font-size: 1.1em;
+}
+
+/* Instructions Panel */
+.instructions {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    pointer-events: auto;
+    max-width: 300px;
+}
+
+.instructions h2 {
+    color: #4CAF50;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.instructions p {
+    color: #a8a8a8;
+    margin-bottom: 8px;
+    font-size: 0.9em;
+}
+
+/* Game Over Screen */
+#game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.9);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    z-index: 20;
+}
+
+#game-over h1 {
+    color: #ff4444;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+#game-over p {
+    margin-bottom: 30px;
+    font-size: 1.2em;
+}
+
+#final-score {
+    color: #4CAF50;
+    font-weight: 600;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .controls {
+        flex-direction: column;
+        bottom: 20px;
+    }
+
+    .game-btn {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    .instructions {
+        max-width: 250px;
+        font-size: 0.9em;
+    }
+
+    #game-over {
+        padding: 30px;
+        width: 90%;
+        max-width: 400px;
+    }
+}
